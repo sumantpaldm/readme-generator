@@ -23,7 +23,8 @@
  
   Clone the whole repository from github and install all the required dependencies as per package.json file. Run the application on command line and find the README.md file in the same directory in which you cloned the application files
 
-  ![screenshot](./Develop\assets\images\screenshot.png)
+  ![screenshot](/assets/images/screenshot.png)
+  [Click here for Video](/assets/media/video.mp4)
   
 
 
