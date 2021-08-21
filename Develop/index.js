@@ -56,17 +56,20 @@ const questions = [
             }
         }
     },
-    {
-        type: 'confirm',
-        name: 'creditConfirm',
-        message: 'Are there any other Collaborators?',
-        default: false,
-    },
+
     {
         type: 'input',
         name: 'credits',
-        message: 'Specify the Names of other collaborators?',
-        when: ({ creditConfirm }) => creditConfirm
+        message: 'Specify the Names of collaborators?(Required)',
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please enter the names!');
+                return false;
+            }
+        }
+
     },
     {
         type: 'confirm',
@@ -133,6 +136,10 @@ function writeToFile(fileName, data) {
 function init() {
     return inquirer.prompt(questions).then(responses => {
         writeToFile("README.md", generateMarkdown(responses));
+
+        console.log(`========================================================
+                        DONE
+=========================================================`)
     });
 }
 
